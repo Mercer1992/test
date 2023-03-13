@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #00f0ff;
+}
+
+h1 {
+  color: #c0db54;
+  background: #050a0e;
+}
+
+.accordion {
+  cursor: pointer;
+}
+
+.accordion:hover label {
+  color: #ff003c;
+}
+.accordion:hover .tab-title::after {
+  display: block;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tab input,
+.tab-content {
+  display: none;
+}
+
+img {
+  max-width: 70%;
+  margin-left: 15%;
+}
+
+.tab {
+  background: #050a0e;
+  color: #c0db54;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.tab-title {
+  position: relative;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tab-title::after {
+  display: none;
+  content: "+";
+}
+
+.tab-content {
+  animation-name: expand;
+  animation-duration: 0.5s;
+}
+
+@keyframes expand {
+  from {
+    max-width: 40%;
+    margin-left: 25%;
+  }
+  to {
+    max-width: 70%;
+    margin-left: 15%;
+  }
+}
+.tab :checked + .tab-title {
+  background: #ff003c;
+  color: #c0db54;
+  transition: 0.3s;
+}
+
+.tab :checked + .tab-title::after {
+  content: "-";
+}
+
+.tab :checked ~ .tab-content {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
